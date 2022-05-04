@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/exam/save}" method="post" th:object="${examen}">
+        <input type="hidden" name="id" id="id" th:field="*{id}">
+        <label for="titulo">titulo</label>
+       <input type="text" name="titulo" id="titulo" th:field="*{titulo}">
+
+       
+
+     <input type="submit" name="guardar"value="guardar">
+     <a th:href="@{/}">regresar</a>
+    </form>
+</body>
+</html>

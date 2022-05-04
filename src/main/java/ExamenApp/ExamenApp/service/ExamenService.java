@@ -12,6 +12,7 @@ import java.util.List;
  * @author jorge
  */
 public interface ExamenService {
+
     public Examen createExamen(Examen examen);
 
     public List<Examen> findAllExamen();
@@ -21,4 +22,6 @@ public interface ExamenService {
     public void deleteExamen(Examen examen);
 
     public Examen findExamen(Examen examen);
+
+    public Examen findExamenById(Long id);
 }

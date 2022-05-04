@@ -16,33 +16,39 @@ import org.springframework.transaction.annotation.Transactional;
  * @author jorge
  */
 @Service
-public class RespuestaServiceIMPL implements RespuestaService{
-@Autowired
-private RespuestaRepository rr;
+public class RespuestaServiceIMPL implements RespuestaService {
+
+    @Autowired
+    private RespuestaRepository rr;
+
     @Override
     public Respuesta createRespuesta(Respuesta respuesta) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-   @Transactional(readOnly = true)
+
+    @Transactional(readOnly = true)
     @Override
     public List<Respuesta> findAllRespuesta() {
-    return (List<Respuesta>)rr.findAll();
+        return (List<Respuesta>) rr.findAll();
 
     }
-   @Transactional
+
+    @Transactional
     @Override
     public Respuesta saveRespuesta(Respuesta respuesta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return rr.save(respuesta);
     }
-   @Transactional
+
+    @Transactional
     @Override
     public void deleteRespuesta(Respuesta respuesta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        rr.delete(respuesta);
     }
-   @Transactional(readOnly = true)
+
+    @Transactional(readOnly = true)
     @Override
     public Respuesta findRespuesta(Respuesta respuesta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return rr.findById(respuesta.getId()).orElse(null);
     }
-    
+
 }

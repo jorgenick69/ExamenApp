@@ -51,9 +51,14 @@ public class ExamenServiceIMPL implements ExamenService {
     @Transactional(readOnly = true)
     @Override
     public Examen findExamen(Examen examen) {
-       return er.findById(examen.getId()).orElse(null);
-        
+        return er.findById(examen.getId()).orElse(null);
 
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Examen findExamenById(Long id) {
+        return er.findById(id).orElse(null);
     }
 
 }
